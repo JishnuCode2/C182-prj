@@ -16,22 +16,12 @@ import {RFValue, RFPercentage} from 'react-native-responsive-fontsize'
 
 import Filter1 from './Filter1';
 
-let data = [
-	{id: 'crown-pic1', src: "../assets/crown-pic1.png"},
-	{id: 'crown-pic2', src: "../assets/crown-pic2.png"},
-	{id: 'crown-pic3', src: "../assets/crown-pic3.png"},
-	{id: 'flower-pic1', src: "../assets/flower-pic1.png"},
-	{id: 'flower-pic2', src: "../assets/flower-pic2.png"},
-	{id: 'flower-pic3', src: "../assets/flower-pic3.png"},
-]
-
 export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			hasCameraPermission: null,
 			faces: [],
-			current_filter: 'crown-pic1'
 		};
 	}
 
@@ -83,7 +73,7 @@ export default class Main extends React.Component {
 						onFacesDetectionError={this.onFacesDetectionError}
 					/>
 					{this.state.faces.map((face)=>{
-						return <Filter1 key={face.faceId} face={face}/>
+						return <Filter1 key={face.faceID} face={face}/>
 					})}
 				</View>
 				<View style={styles.filterContainer}></View>
